@@ -1,0 +1,17 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.wrapper{
+    width: 750px;
+    height: auto;
+    background: green;
+    /* background-image: url("/static/img/ninja_background.jpg"); */
+}
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.mid{
+    display: flex;
+}

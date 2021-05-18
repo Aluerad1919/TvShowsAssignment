@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles_index.css' %}">
+    <title>Shows</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>All Shows</h1>
+        <table>
+                <thead>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Network</th>
+                    <th>Release Date</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    {%for i in Shows_Db%}
+                        <tr>
+                            <td>{{i.id}}</td>
+                            <td>{{i.title}}</td>
+                            <td>{{i.network}}</td>
+                            <td>{{i.release_date}}</td>
+                            <td>
+                                <a href="/shows/details/{{i.id}}">Show</a>
+                                <a href="/shows/edit/{{i.id}}">Edit</a>
+                                <a href="/deleting/{{i.id}}">Delete</a>
+                            </td>
+                        </tr>
+                    {%endfor%}
+                </tbody>
+        </table>
+        <a href="/shows/add">Add a Show</a>
+    </div>
+</body>
